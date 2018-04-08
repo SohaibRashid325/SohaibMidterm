@@ -23,4 +23,21 @@ public interface Employee {
 	//employee benefit
 	public void benefitLayout();
 
+
+	//employee height
+	public int employeeHeight();
+
+
+	//employee gender
+	public int employeeGender();
+
+	//employee bloodtype
+	public int bloodType();
+
+
+
+
+
+
+
 }
