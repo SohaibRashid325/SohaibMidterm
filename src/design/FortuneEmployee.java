@@ -1,47 +1,60 @@
-//package design;
-//
-//public class FortuneEmployee {
-//
-//	/**
-//	 * FortuneEmployee class has a main methods where you will be able to create Object from
-//	 * EmployeeInfo class to use fields and attributes.Demonstrate as many methods as possible
-//	 * to use with proper business work flow.Think as a Software Architect, Product Designer and
-//	 * as a Software Developer.(employee.info.system) package is given as an outline,you need to elaborate
-//	 * more to design an application that will meet for fortune 500 Employee Information
-//	 * Services.
-//	 *
-//	 * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
-//	 *
-//	 **/
-//	public static void main(String[] args) {
-//		EmployeeInfo employee1 = new EmployeeInfo(01);
-//		EmployeeInfo employee2 = new EmployeeInfo(02, "Zeel");
-//		EmployeeInfo employee3 = new EmployeeInfo(03, "Sourov", 26, "Cyber Security", 85300, 2);
-//
-//
-//		employee1.setEmployeeName("Kiren");
-//		employee1.setEmployeeAge(24);
-//		employee1.setDepartment("Developer");
-//		employee1.setSalary(95400);
-//		employee1.setPerformance(03);
-//
-//
-//		employee2.setEmployeeAge(24);
-//		employee2.setDepartment("Selenium Manual");
-//		employee2.setSalary(90985);
-//		employee2.setPerformance(04);
-//
-//
-//		employee1.benefitLayout();
-//
-//
-//		EmployeeInfo.calculateEmployeeBonus(employee2.getSalary(), employee2.getPerformance());
-//
-//
-//		EmployeeInfo.calculateEmployeePension(employee3.getSalary());
-//
-//
-//
-//	}
-//
-//}
+package design;
+import databases.ConnectDB;
+import java.io.IOException;
+import java.sql.SQLException;
+
+public class FortuneEmployee {
+    /**
+
+     * FortuneEmployee class has a main methods where you will be able to create Object from
+
+     * EmployeeInfo class to use fields and attributes.Demonstrate as many methods as possible
+
+     * to use with proper business work flow.Think as a Software Architect, Product Designer and
+
+     * as a Software Developer.(employee.info.system) package is given as an outline,you need to elaborate
+
+     * more to design an application that will meet for fortune 500 Employee Information
+
+     * Services.
+
+     *
+
+     * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
+
+     *
+
+     **/
+    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+
+
+        EmployeeInfo employee1 = new EmployeeInfo(101);
+
+        EmployeeInfo employee2 = new EmployeeInfo("Jackie",43);
+
+        EmployeeInfo employee3 = new EmployeeInfo("Vanessa",32,29);
+
+
+        employee1.setName("Sohaib");
+
+        System.out.println(employee1.getName());
+
+
+        employee2.setName("Google");
+
+        System.out.println(employee2.getName());
+
+
+        EmployeeInfo.calculateEmployeeBonus(10000,7);
+
+        EmployeeInfo.calculateEmployeePension(10000);
+
+
+        ConnectDB connection = new ConnectDB();
+
+        connection.insertProfileToMySql("employees","column1","column2");
+
+
+    }
+
+}
